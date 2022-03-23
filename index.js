@@ -1,7 +1,7 @@
 console.log("hello world")
 
-addMovie = (Event) => {
-    //event.preventDefault()
+const addMovie = (event) => {
+    event.preventDefault()
     const inputField = document.querySelector("input");
     const movie = document.createElement("li");
     const movieTitle = document.createElement("span");
@@ -10,4 +10,8 @@ addMovie = (Event) => {
     document.querySelector("ul").appendChild(movie);
 
 }
-document.querySelector("form").addEventListener("submit", addMovie());
+console.log(document.querySelector("form"));
+//document.querySelector("form").addEventListener("submit", addMovie);
+let form = document.querySelector(`form`);
+form.addEventListener(`submit`, addMovie);
+//document.querySelector(`form`).addEventListener(`submit`, addMovie)
