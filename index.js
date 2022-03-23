@@ -5,13 +5,10 @@ const addMovie = (event) => {
     const inputField = document.querySelector("input");
     const movie = document.createElement("li");
     const movieTitle = document.createElement("span");
-    movieTitle.textContent(inputField);
+    movieTitle.textContent = inputField.value;
     movie.appendChild(movieTitle);
     document.querySelector("ul").appendChild(movie);
-
+    inputField.value = "";
 }
-console.log(document.querySelector("form"));
-//document.querySelector("form").addEventListener("submit", addMovie);
-let form = document.querySelector(`form`);
-form.addEventListener(`submit`, addMovie);
-//document.querySelector(`form`).addEventListener(`submit`, addMovie)
+
+document.querySelector("form").addEventListener("submit", addMovie);
